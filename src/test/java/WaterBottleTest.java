@@ -1,4 +1,7 @@
 import org.junit.Before;
+import org.junit.Test;
+
+import static junit.framework.TestCase.assertEquals;
 
 public class WaterBottleTest {
 
@@ -8,5 +11,25 @@ public class WaterBottleTest {
     public void before(){
         waterBottle = new WaterBottle(100.00);
     }
+
+    @Test
+    public void hasVolume(){
+        assertEquals(100, waterBottle.getVolume(),0.01);
+    }
+
+    @Test
+    public void decreasesVolumeWhenDrinkIsAdded(){
+        waterBottle.drink(10.00);
+        assertEquals(90, waterBottle.getVolume(),0.01);
+    }
+
+    @Test
+    public void emptyWaterBottle(){
+        waterBottle.empty();
+        assertEquals(0.00,waterBottle.getVolume(),0.01);
+    }
+
+
+
 
 }
