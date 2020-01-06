@@ -9,7 +9,7 @@ public class WaterBottleTest {
 
     @Before
     public void before(){
-        waterBottle = new WaterBottle(100.00);
+        waterBottle = new WaterBottle(100.00, 100.00);
     }
 
     @Test
@@ -29,7 +29,11 @@ public class WaterBottleTest {
         assertEquals(0.00,waterBottle.getVolume(),0.01);
     }
 
-
+    @Test
+    public void fillWaterBottle(){
+        waterBottle.fill();
+        assertEquals(100.00, waterBottle.getVolume(), 0.01);
+    }
 
 
 }

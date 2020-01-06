@@ -1,21 +1,23 @@
-public class WaterBottle {
-    private double volume;
+class WaterBottle(volume: Double, private val startingVolume: Double) {
+    var volume: Double = 0.toDouble()
+        private set
 
-    public WaterBottle(double volume){
-        this.volume = volume;
+    init {
+        this.volume = volume
     }
 
-    public double getVolume(){
-        return this.volume;
+    fun drink(amount: Double) {
+        this.volume -= amount
     }
 
-    public void drink(double amount){
-        this.volume -= amount;
+    fun empty() {
+        this.volume = 0.0
     }
 
-    public void empty(){
-        this.volume = 0;
+    fun fill() {
+        this.volume = this.startingVolume
     }
+
 
 }
 
