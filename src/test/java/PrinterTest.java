@@ -22,6 +22,13 @@ public class PrinterTest {
         printer.print(2,5);
         assertEquals(10,printer.getSheets());
     }
+
+    @Test
+    public void printerHasEnoughPaper(){
+        Printer smallPrinter = new Printer(5);
+        smallPrinter.print(2,5);
+        assertEquals(5,smallPrinter.getSheets());
+    }
 }
 
 
