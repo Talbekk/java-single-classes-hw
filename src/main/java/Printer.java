@@ -9,5 +9,10 @@ public class Printer {
         return this.numberOfSheets;
     }
 
+    public void print(int pages, int copies){
+        int total = pages * copies;
+        this.numberOfSheets -= total;
+    }
+
 
 }
