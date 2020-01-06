@@ -9,7 +9,7 @@ public class PrinterTest {
 
     @Before
     public void before(){
-        printer = new Printer(20);
+        printer = new Printer(20,50);
     }
 
     @Test
@@ -25,9 +25,20 @@ public class PrinterTest {
 
     @Test
     public void printerHasEnoughPaper(){
-        Printer smallPrinter = new Printer(5);
+        Printer smallPrinter = new Printer(5,50);
         smallPrinter.print(2,5);
         assertEquals(5,smallPrinter.getSheets());
+    }
+
+    @Test
+    public void printerHasToner(){
+        assertEquals(50,printer.getToner());
+    }
+
+    @Test
+    public void reduceTonerLevelForEveryPage(){
+        printer.print(2,6);
+        assertEquals(38,printer.getToner());
     }
 }
 
