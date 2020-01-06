@@ -16,6 +16,12 @@ public class PrinterTest {
     public void hasSheets(){
         assertEquals(20,printer.getSheets());
     }
+
+    @Test
+    public void printRequest(){
+        printer.print(2,5);
+        assertEquals(10,printer.getSheets());
+    }
 }
 
 
